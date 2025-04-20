@@ -17,35 +17,22 @@ Skewed features were transformed using PowerTransformer() for normalization.
 Stratified sampling was applied to maintain the distribution of wine quality scores across train/test sets.
 
 ### Modeling
-Three models were trained and evaluated:
-1. Logistic Regression
-Accuracy: 0.69
-Precision: 0.56
-Recall: 0.52
-F1-score: 0.53
+Models trained and evaluated:
+1. SVM Regressor:
+- MSE:0.29
+- RMSE:0.54
+- MAE:0.37
 
-2. Decision Tree
-Best Parameters: max_depth=10, min_samples_split=5
-Accuracy: 0.74
-Precision: 0.63
-Recall: 0.60
-F1-score: 0.61
+2. Fine-tuned SVM Regressor:
+- Best parameters by GridSearchCV: 'svm__C': 0.5, 'svm__gamma': 'scale', 'svm__kernel': 'rbf'
+- Best parameters by RandomizedSearchCV: 'svm__C': 0.3, 'svm__gamma': 'auto', 'svm__kernel': 'rbf'
+- RMSE: 0.63
+- MAE: 0.46
+- R2: 0.36
 
-3. Random Forest
-Best Parameters: n_estimators=100, max_depth=12, min_samples_split=5
-Accuracy: 0.81
-Precision: 0.71
-Recall: 0.70
-F1-score: 0.70
-
-### Evaluation and Insights
-Random Forest outperformed both Logistic Regression and Decision Tree in all key metrics.
-Feature Importance (Top 3):
-- Alcohol
-- Sulphates
-- Volatile Acidity
-
-Alcohol content had the strongest positive correlation with wine quality.
+### Experimenting
+- Implement 'SelectFromModel' transformer in full pipeline
+- Implementing StandardScalerClone from scratch
 
 ## Acknowledgements
 Dataset was provided by the UCI Machine Learning Repository and published on Kaggle.
