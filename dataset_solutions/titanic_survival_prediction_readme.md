@@ -23,37 +23,21 @@ Created features:
 Features were scaled using StandardScaler.
 
 ### Modeling
-1. Logistic Regression
-- Accuracy: 0.82
-- Precision: 0.78
-- Recall: 0.73
-- F1-score: 0.75
-
-2. Support Vector Machine (SVM)
-- Accuracy: 0.84
-- Precision: 0.80
+1. Decision Tree Classifier:
+- Accuracy: 0.79
+- Precision: 0.75
 - Recall: 0.76
-- F1-score: 0.78
-
-3. Random Forest
-- Best Parameters: n_estimators=100, max_depth=8
-- Accuracy: 0.86
-- Precision: 0.82
-- Recall: 0.81
-- F1-score: 0.81
-
-4. K-Nearest Neighbors (KNN)
-- Best K: 9
-- Accuracy: 0.81
-- Precision: 0.76
-- Recall: 0.75
-- F1-score: 0.75
+- F1: 0.75
+2. Random Forest Classifier:
+- Best parameters: 'criterion': 'gini', 'max_depth': 5, 'n_estimators': 50
+- Accuracy: 0.82
+- Precision: 0.84
+- Recall: 0.69
+- F1: 0.76
 
 ### Evaluation and Insights
 Random Forest achieved the highest overall accuracy and balance between precision and recall.
-Feature importance highlights: Sex, Title, and Fare were the most impactful predictors.
-
-Engineered features like IsAlone and Title improved model performance.
+Performance of the model and results are reasonable, considering the type of dataset we are working with.
 
 ## Acknowledgements
 Dataset provided by Kaggle.com
